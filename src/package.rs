@@ -7,8 +7,9 @@ pub struct Package {
     pub desc: String,
 }
 
+//todo: потом тут добваить всякие приколюхи и читать с помощью enaum правильный файл
 pub fn read_ubuntu_apt_packages() -> Vec<Package> {
-    let file_path = "./packages/ubuntu/apt.json";
+    let file_path = "config/ubuntu/apt.json";
     let str_json =
         fs::read_to_string(file_path).expect("Something went wrong reading the config file");
 

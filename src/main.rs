@@ -1,6 +1,5 @@
-use std::process::Command;
-
 use post_install::package;
+use std::process::Command;
 
 fn main() {
     let mut bash_exec = Command::new("bash");
