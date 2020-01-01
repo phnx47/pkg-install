@@ -1,18 +1,19 @@
 use std::process::Command;
 
-use arch_postinstall::config;
+use arch_pi::package;
 
 fn main() {
     let mut bash_exec = Command::new("bash");
-
-    read_pacman_packages();
-
     let apt_install = bash_exec.arg("-c").arg("sudo apt-get install");
-    let output = apt_install.arg("nano")
-        .output()
-        .expect("failed to execute process");
+    let packages = package::read_pacman_packages();
 
-    println!("status: {}", output.status);
-    println!("stdout: {}", String::from_utf8_lossy(&output.stdout));
-    println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
+    for value in packages.iter() {
+        println!("Package: {} - {}", value.name, value.desc);
+
+        let output = apt_install.arg(&value.name).output().unwrap();
+
+        println!("status: {}", output.status);
+        println!("stdout: {}", String::from_utf8_lossy(&output.stdout));
+        println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
+    }
 }

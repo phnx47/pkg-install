@@ -1,8 +1,9 @@
 [package]
-name = "arch-postinstall"
+name = "arch-pi"
 version = "0.1.0"
 authors = ["Sergey Kuznetsov <sergey.gh@fastmail.net>"]
 edition = "2018"
 
 [dependencies]
-rustc-serialize = "0.3.24"
+serde_json = "1.0"
+serde = { version = "1.0.104", features = ["derive"] }
