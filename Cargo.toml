@@ -1,5 +1,5 @@
 [package]
-name = "arch-pi"
+name = "post-install"
 version = "0.1.0"
 authors = ["Sergey Kuznetsov <sergey.gh@fastmail.net>"]
 edition = "2018"
