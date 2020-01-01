@@ -8,6 +8,7 @@ pub struct Package {
 }
 
 //todo: потом тут добваить всякие приколюхи и читать с помощью enaum правильный файл
+//todo: нужно получать путь из параметров.
 pub fn read_ubuntu_apt_packages() -> Vec<Package> {
     let file_path = "config/ubuntu/apt.json";
     let str_json =
