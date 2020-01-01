@@ -1,3 +1,4 @@
+use colored::*;
 use post_install::package;
 use std::process::Command;
 
@@ -7,7 +8,7 @@ fn main() {
     let packages = package::read_ubuntu_apt_packages();
 
     for value in packages.iter() {
-        println!("Package: {} - {}", value.name, value.desc);
+        println!("Package: {} - {}", value.name.green(), value.desc.blue());
 
         let output = apt_install.arg(&value.name).output().unwrap();
 
