@@ -1,5 +1,18 @@
 [
   {"name":"vim", "desc": "Консольный текстовой редактор"},
   {"name":"nano", "desc": "Консольный текстовой редактор"},
-  {"name":"emacs", "desc": "Продвинутый Консольный и графический текстовой редактор"}
+  {"name":"emacs", "desc": "Продвинутый Консольный и графический текстовой редактор"},
+  {"name":"kate", "desc": "Отличный графический редактор"},
+  {"name":"firefox", "desc": "Браузер"},
+  {"name":"chromium-browser", "desc": "Браузер"},
+  {"name":"kmail", "desc": "Почтовый клиент"},
+  {"name":"kontact", "desc": "Адресная книга"},
+  {"name":"korganizer", "desc": "Органайзер"},
+  {"name":"kcalc", "desc": "Калькулятор"},
+  {"name":"openvpn", "desc": "Open VPN"},
+  {"name":"git", "desc": "Git"},
+  {"name":"kleopatra", "desc": "Графическое управление gpg ключами"},
+
+
+  {"name":"network-manager-openvpn", "desc": "NetworkManager начнет работать с OpenVpn"}
 ]
