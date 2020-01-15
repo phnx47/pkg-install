@@ -1,0 +1,4 @@
+[
+  {"name":"cargo-update", "desc": "Обновление сargo пакетов"},
+  {"name":"cargo-edit", "desc": "Управление Cargo.toml"}
+]
