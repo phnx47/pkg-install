@@ -15,7 +15,7 @@
   {"name":"kleopatra", "desc": "Графическое управление gpg ключами"},
   {"name":"gnome-keyring", "desc": "Keyring, некоторые приложения умеют работать только с ним, а не родным KDE"},
 
-  {"name": "kio-gdrive", "desc": "Подключение GDrive чере Network. Есть проблемы с авторизацией"},
+  {"name":"kio-gdrive", "desc": "Подключение GDrive чере Network. Есть проблемы с авторизацией"},
 
   {"name":"network-manager-openvpn", "desc": "NetworkManager начнет работать с OpenVpn"}
 
