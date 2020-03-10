@@ -1,6 +1,6 @@
 [package]
 name = "arch-post-install"
-description = "Arch Linux post-installation"
+description = "Arch Linux Post Installation"
 version = "0.1.0"
 authors = ["Sergey Kuznetsov <sergey.gh@fastmail.net>"]
 edition = "2018"
