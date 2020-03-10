@@ -1,8 +1,8 @@
-//use colored::*;
-//use post_install::package;
-//use std::process::Command;
 use arch_post_install::phase::Phase;
+use colored::*;
 use structopt::StructOpt;
+
+//use std::process::Command;
 
 #[derive(StructOpt, Debug)]
 struct Cli {
@@ -19,7 +19,8 @@ fn main() {
             panic!("Can't parse {:?}", args.phase);
         }
     };
-    println!("{:?}", phase);
+
+    println!("Phase: {}", phase.to_string().green());
 
     /* let mut bash_exec = Command::new("bash");
     let apt_install = bash_exec.arg("-c").arg("sudo apt-get install"); // sudo pacman -S "$PKG" --noconfirm --needed
