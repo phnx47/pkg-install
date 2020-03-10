@@ -1,0 +1,6 @@
+{
+  "paths": {
+    "pacman" : "~/Projects/My/arch-post-install-configs/pacman.json",
+    "cargo": "~/Projects/My/arch-post-install-configs/cargo.json"
+  }
+}

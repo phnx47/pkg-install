@@ -1,6 +1,6 @@
 [package]
-name = "post-install"
-description = "Утилита для автоматизации настройки Linux дистрибутивов"
+name = "arch-post-install"
+description = "Arch Linux post-installation"
 version = "0.1.0"
 authors = ["Sergey Kuznetsov <sergey.gh@fastmail.net>"]
 edition = "2018"
