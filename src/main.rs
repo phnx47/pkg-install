@@ -11,16 +11,8 @@ struct Cli {
 }
 
 fn main() {
-    let args = Cli::from_args();
-    let phase_result = args.phase.parse::<Phase>();
-    let phase = match phase_result {
-        Ok(phase) => phase,
-        Err(_) => {
-            panic!("Can't parse {:?}", args.phase);
-        }
-    };
-
-    println!("Phase: {}", phase.to_string().green());
+    //let phase = read_phase();
+    let phase: Phase = Phase::XOrg; // only for debug
 
     /* let mut bash_exec = Command::new("bash");
     let apt_install = bash_exec.arg("-c").arg("sudo apt-get install"); // sudo pacman -S "$PKG" --noconfirm --needed
@@ -36,4 +28,19 @@ fn main() {
         println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
     }
     */
+}
+
+#[allow(dead_code)]
+fn read_phase() -> Phase {
+    let args = Cli::from_args();
+    let phase_result = args.phase.parse::<Phase>();
+    let phase = match phase_result {
+        Ok(phase) => phase,
+        Err(_) => {
+            panic!("Can't parse {:?}", args.phase);
+        }
+    };
+
+    println!("Phase: {}", phase.to_string().green());
+    phase
 }
