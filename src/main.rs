@@ -1,4 +1,4 @@
-use arch_post_install::phase::Phase;
+use arch_post_install::package::{read_packages, Phase};
 use colored::*;
 use structopt::StructOpt;
 
@@ -13,6 +13,16 @@ struct Cli {
 fn main() {
     //let phase = read_phase();
     let phase: Phase = Phase::XOrg; // only for debug
+    let packages = read_packages(phase);
+
+    for value in packages.iter() {
+        println!(
+            "{}: {} - {}",
+            "Package".blue(),
+            value.name.green(),
+            value.desc.yellow()
+        );
+    }
 
     /* let mut bash_exec = Command::new("bash");
     let apt_install = bash_exec.arg("-c").arg("sudo apt-get install"); // sudo pacman -S "$PKG" --noconfirm --needed

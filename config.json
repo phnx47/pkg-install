@@ -1,7 +1,7 @@
 {
   "paths": {
-    "xorg" : "~/Projects/My/arch-post-install-configs/xorg.json",
-    "soft_pacman" : "~/Projects/My/arch-post-install-configs/soft_pacman.json",
-    "soft_cargo": "~/Projects/My/arch-post-install-configs/soft_cargo.json"
+    "xorg" : "/home/sergey/Projects/My/arch-post-install-configs/xorg.json",
+    "soft_pacman" : "/home/sergey/Projects/My/arch-post-install-configs/soft_pacman.json",
+    "soft_cargo": "/home/sergey/Projects/My/arch-post-install-configs/soft_cargo.json"
   }
 }
