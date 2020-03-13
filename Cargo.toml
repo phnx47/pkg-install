@@ -13,3 +13,4 @@ serde = { version = "1.0.104", features = ["derive"] }
 colored = "1.9.3"
 structopt = "0.3.11"
 enum-utils = "0.1.2"
+indicatif = "0.14.0"

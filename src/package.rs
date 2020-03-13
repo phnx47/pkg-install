@@ -17,8 +17,9 @@ struct Config {
 #[enumeration(case_insensitive)]
 #[derive(Debug, Deserialize, enum_utils::FromStr)]
 pub enum Phase {
-    //todo: try parse from number
     XOrg,
+    SoftPacman,
+    SoftCargo,
 }
 
 pub fn read_packages(phase: Phase) -> Vec<Package> {

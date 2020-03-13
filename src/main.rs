@@ -1,5 +1,6 @@
 use arch_post_install::package::{read_packages, Phase};
 use colored::*;
+use indicatif::ProgressBar;
 use structopt::StructOpt;
 
 //use std::process::Command;
@@ -15,14 +16,19 @@ fn main() {
     let phase: Phase = Phase::XOrg; // only for debug
     let packages = read_packages(phase);
 
+    let len = packages.capacity() as u64;
+    let bar = ProgressBar::new(len);
     for value in packages.iter() {
+        println!();
         println!(
             "{}: {} - {}",
             "Package".blue(),
             value.name.green(),
             value.desc.yellow()
         );
+        bar.inc(1);
     }
+    bar.finish();
 
     /* let mut bash_exec = Command::new("bash");
     let apt_install = bash_exec.arg("-c").arg("sudo apt-get install"); // sudo pacman -S "$PKG" --noconfirm --needed
