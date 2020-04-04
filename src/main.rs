@@ -17,11 +17,14 @@ fn main() {
 
     let len = packages.capacity() as u64;
     let bar = ProgressBar::new(len);
-    let mut install_command: Command = Command::new("pacman");
 
-    match phase {
-        Phase::XOrg => install_command.arg("-S").arg("--noconfirm").arg("--needed"),
-        _ => panic!("Can't find command {:?}", phase),
+    let mut install_command = match phase {
+        Phase::XOrg => {
+            let mut pacman = Command::new("pacman");
+            pacman.arg("-S").arg("--noconfirm").arg("--needed");
+            pacman
+        }
+        _ => panic!("Can't find program {:?}", phase),
     };
 
     for value in packages.iter() {
