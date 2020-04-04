@@ -11,8 +11,8 @@ struct Cli {
 }
 
 fn main() {
-    //let phase = read_phase();
-    let phase: Phase = Phase::XOrg; // only for debug
+    let phase = read_phase();
+    //let phase: Phase = Phase::XOrg; // only for debug
     let packages = read_packages(&phase);
 
     let len = packages.capacity() as u64;
@@ -47,7 +47,7 @@ fn main() {
     bar.finish();
 }
 
-#[allow(dead_code)]
+//#[allow(dead_code)]
 fn read_phase() -> Phase {
     let args = Cli::from_args();
     let phase_result = args.phase.parse::<Phase>();
