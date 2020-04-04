@@ -22,7 +22,10 @@ fn main() {
     let install_command = match phase {
         Phase::XOrg => bash_exec
             .arg("-c")
-            .arg("sudo pacman -S --noconfirm --needed"),
+            .arg("sudo pacman")
+            .arg("-S")
+            .arg("--noconfirm")
+            .arg("--needed"),
         _ => panic!("Can't find command {:?}", phase),
     };
 
