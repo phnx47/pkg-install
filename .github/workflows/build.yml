@@ -12,9 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: build
-      run: ./cargo.sh build --release
+      run: ./publsih.sh
 
     - uses: actions/upload-artifact@v1
       with:
         name: artifacts
-        path: target/release/arch-post-install
+        path: target/publish
