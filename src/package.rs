@@ -22,7 +22,7 @@ pub enum Phase {
     SoftCargo,
 }
 
-pub fn read_packages(phase: Phase) -> Vec<Package> {
+pub fn read_packages(phase: &Phase) -> Vec<Package> {
     let config_path = "config.json";
     let config_str_json =
         fs::read_to_string(config_path).expect("Something went wrong reading the config file");
