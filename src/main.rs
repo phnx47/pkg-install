@@ -28,19 +28,14 @@ fn main() {
 
     for value in packages.iter() {
         println!();
-        println!(
-            "{}: {} - {}",
-            "Package".blue(),
-            value.name.green(),
-            value.desc.yellow()
-        );
+        println!("{} - {}", value.name.green(), value.desc.yellow());
         let output = install_command.arg(&value.name).output().unwrap();
 
         let std_out = String::from_utf8_lossy(&output.stdout);
-        let std_err = String::from_utf8_lossy(&output.stdout);
+        let std_err = String::from_utf8_lossy(&output.stderr);
 
         if !std_out.is_empty() {
-            println!("{}", std_out);
+            println!("{}", std_out.bold());
         }
 
         if !std_err.is_empty() {
@@ -50,21 +45,6 @@ fn main() {
         bar.inc(1);
     }
     bar.finish();
-
-    /* let mut bash_exec = Command::new("bash");
-    let apt_install = bash_exec.arg("-c").arg("sudo apt-get install"); // sudo pacman -S "$PKG" --noconfirm --needed
-    let packages = package::re;
-
-    for value in packages.iter() {
-        println!("Package: {} - {}", value.name.green(), value.desc.blue());
-
-        let output = apt_install.arg(&value.name).output().unwrap();
-
-        println!("status: {}", output.status);
-        println!("stdout: {}", String::from_utf8_lossy(&output.stdout));
-        println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
-    }
-    */
 }
 
 #[allow(dead_code)]
