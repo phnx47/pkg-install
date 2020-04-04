@@ -28,8 +28,8 @@ fn main() {
     };
 
     for value in packages.iter() {
-        bar.inc(1);
         println!();
+        bar.inc(1);
         println!("{} - {}", value.name.green(), value.desc.yellow());
         let mut child = install_command.arg(&value.name).spawn().unwrap();
         // sleep a bit so that child can process the input
