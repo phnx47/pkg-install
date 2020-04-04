@@ -30,13 +30,12 @@ fn main() {
     for value in packages.iter() {
         println!();
         println!("{} - {}", value.name.green(), value.desc.yellow());
-        let output = install_command
+        install_command
             .arg(&value.name)
-            .output()
-            .ok()
+            .spawn()
             .expect("Failed to execute.");
 
-        let std_out = String::from_utf8_lossy(&output.stdout);
+        /*  let std_out = String::from_utf8_lossy(&output.stdout);
         let std_err = String::from_utf8_lossy(&output.stderr);
 
         if !std_out.is_empty() {
@@ -45,7 +44,7 @@ fn main() {
 
         if !std_err.is_empty() {
             println!("{}", std_err.red());
-        }
+        }*/
 
         bar.inc(1);
     }
