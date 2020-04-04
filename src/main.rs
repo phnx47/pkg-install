@@ -17,10 +17,10 @@ fn main() {
 
     let len = packages.capacity() as u64;
     let bar = ProgressBar::new(len);
-    let mut bash_exec = Command::new("bash");
+    let mut install_command: Command = Command::new("bash");
 
-    let install_command = match phase {
-        Phase::XOrg => bash_exec
+    match phase {
+        Phase::XOrg => install_command
             .arg("-c")
             .arg("sudo pacman")
             .arg("-S")
