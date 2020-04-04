@@ -32,7 +32,7 @@ fn main() {
         println!("{} - {}", value.name.green(), value.desc.yellow());
         let output = install_command
             .arg(&value.name)
-            .spawn()
+            .output()
             .ok()
             .expect("Failed to execute.");
 
