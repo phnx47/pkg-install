@@ -17,7 +17,7 @@ fn main() {
 
     let len = packages.capacity() as u64;
     let bar = ProgressBar::new(len);
-    let mut install_command: Command = Command::new("bash");
+    let mut install_command: Command = Command::new("sh");
 
     match phase {
         Phase::XOrg => install_command
