@@ -28,25 +28,13 @@ fn main() {
     };
 
     for value in packages.iter() {
+        bar.inc(1);
         println!();
         println!("{} - {}", value.name.green(), value.desc.yellow());
         install_command
             .arg(&value.name)
             .spawn()
             .expect("Failed to execute.");
-
-        /*  let std_out = String::from_utf8_lossy(&output.stdout);
-        let std_err = String::from_utf8_lossy(&output.stderr);
-
-        if !std_out.is_empty() {
-            println!("{}", std_out.bold());
-        }
-
-        if !std_err.is_empty() {
-            println!("{}", std_err.red());
-        }*/
-
-        bar.inc(1);
     }
     bar.finish();
 }
