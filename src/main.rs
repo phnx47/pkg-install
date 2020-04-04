@@ -17,15 +17,10 @@ fn main() {
 
     let len = packages.capacity() as u64;
     let bar = ProgressBar::new(len);
-    let mut install_command: Command = Command::new("sh");
+    let mut install_command: Command = Command::new("pacman");
 
     match phase {
-        Phase::XOrg => install_command
-            .arg("-c")
-            .arg("sudo pacman")
-            .arg("-S")
-            .arg("--noconfirm")
-            .arg("--needed"),
+        Phase::XOrg => install_command.arg("-S").arg("--noconfirm").arg("--needed"),
         _ => panic!("Can't find command {:?}", phase),
     };
 
