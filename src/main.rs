@@ -32,7 +32,11 @@ fn main() {
     for value in packages.iter() {
         println!();
         println!("{} - {}", value.name.green(), value.desc.yellow());
-        let output = install_command.arg(&value.name).output().unwrap();
+        let output = install_command
+            .arg(&value.name)
+            .output()
+            .ok()
+            .expect("Failed to execute.");
 
         let std_out = String::from_utf8_lossy(&output.stdout);
         let std_err = String::from_utf8_lossy(&output.stderr);
