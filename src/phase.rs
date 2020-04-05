@@ -31,7 +31,7 @@ pub fn read_phase() -> Phase {
     let phase = match phase_result {
         Ok(phase) => phase,
         Err(_) => {
-            panic!("Can't parse {:?}", args.phase);
+            panic!("Can't parse Phase{:?}", args.phase);
         }
     };
 
