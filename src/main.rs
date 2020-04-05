@@ -17,16 +17,9 @@ fn main() {
         bar.inc(1);
         println!("{} - {}", value.name.green(), value.desc.yellow());
         let mut child = install_command.arg(&value.name).spawn().unwrap();
+
         // sleep a bit so that child can process the input
-        std::thread::sleep(std::time::Duration::from_millis(500));
-
-        // send SIGINT to the child
-        nix::sys::signal::kill(
-            nix::unistd::Pid::from_raw(child.id() as i32),
-            nix::sys::signal::Signal::SIGINT,
-        )
-        .expect("cannot send ctrl-c");
-
+        std::thread::sleep(std::time::Duration::from_millis(300));
         // wait for child to terminate
         child.wait().unwrap();
     }
