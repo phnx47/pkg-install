@@ -13,7 +13,6 @@ pub fn read_command(phase: &Phase) -> Command {
             cargo.arg("install");
             cargo
         }
-        _ => panic!("Can't find program {:?}", phase),
     };
     install_command
 }
