@@ -3,7 +3,7 @@ use std::process::Command;
 
 pub fn read_command(phase: &Phase) -> Command {
     let install_command = match phase {
-        Phase::XOrg => {
+        Phase::Xorg => {
             let mut pacman = Command::new("pacman");
             pacman.arg("-S").arg("--noconfirm").arg("--needed");
             pacman

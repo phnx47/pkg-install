@@ -14,7 +14,7 @@ struct Cli {
 #[enumeration(rename_all = "snake_case")]
 #[derive(Debug, Deserialize, enum_utils::FromStr)]
 pub enum Phase {
-    XOrg,
+    Xorg,
     SoftPacman,
     SoftCargo,
 }
@@ -31,7 +31,7 @@ pub fn read_phase() -> Phase {
     let phase = match phase_result {
         Ok(phase) => phase,
         Err(_) => {
-            panic!("Can't parse Phase{:?}", args.phase);
+            panic!("Can't parse Phase {:?}", args.phase);
         }
     };
 
