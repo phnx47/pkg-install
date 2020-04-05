@@ -1,5 +1,6 @@
 use colored::*;
 use core::fmt;
+use inflector::cases::titlecase::to_title_case;
 use serde::Deserialize;
 use structopt::StructOpt;
 
@@ -10,6 +11,7 @@ struct Cli {
 }
 
 #[enumeration(case_insensitive)]
+#[enumeration(rename_all = "snake_case")]
 #[derive(Debug, Deserialize, enum_utils::FromStr)]
 pub enum Phase {
     XOrg,
@@ -33,6 +35,6 @@ pub fn read_phase() -> Phase {
         }
     };
 
-    println!("Phase: {}", phase.to_string().green());
+    println!("Phase: {}", to_title_case(&args.phase).green());
     phase
 }
