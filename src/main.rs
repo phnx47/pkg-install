@@ -16,11 +16,8 @@ fn main() {
         println!();
         bar.inc(1);
         println!("{} - {}", value.name.green(), value.desc.yellow());
-        let mut child = install_command.arg(&value.name).spawn().unwrap();
-
-        // sleep a bit so that child can process the input
         std::thread::sleep(std::time::Duration::from_millis(300));
-        // wait for child to terminate
+        let mut child = install_command.arg(&value.name).spawn().unwrap();
         child.wait().unwrap();
     }
     bar.finish();
