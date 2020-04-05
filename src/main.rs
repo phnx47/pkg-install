@@ -7,11 +7,10 @@ use indicatif::ProgressBar;
 fn main() {
     let phase = read_phase();
     let packages = read_packages(&phase);
+    let mut install_command = read_command(&phase);
 
     let len = packages.capacity() as u64;
     let bar = ProgressBar::new(len);
-
-    let mut install_command = read_command(&phase);
 
     for value in packages.iter() {
         println!();
