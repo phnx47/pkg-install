@@ -1,31 +1,17 @@
-use arch_post_install::package::{read_packages, Phase};
+use arch_post_install::command::read_command;
+use arch_post_install::package::read_packages;
+use arch_post_install::phase::read_phase;
 use colored::*;
 use indicatif::ProgressBar;
-use std::process::Command;
-use structopt::StructOpt;
-
-#[derive(StructOpt, Debug)]
-struct Cli {
-    #[structopt(short = "p", long = "phase")]
-    phase: String,
-}
 
 fn main() {
     let phase = read_phase();
-    //let phase: Phase = Phase::XOrg; // only for debug
     let packages = read_packages(&phase);
 
     let len = packages.capacity() as u64;
     let bar = ProgressBar::new(len);
 
-    let mut install_command = match phase {
-        Phase::XOrg => {
-            let mut pacman = Command::new("pacman");
-            pacman.arg("-S").arg("--noconfirm").arg("--needed");
-            pacman
-        }
-        _ => panic!("Can't find program {:?}", phase),
-    };
+    let mut install_command = read_command(&phase);
 
     for value in packages.iter() {
         println!();
@@ -46,19 +32,4 @@ fn main() {
         child.wait().unwrap();
     }
     bar.finish();
-}
-
-//#[allow(dead_code)]
-fn read_phase() -> Phase {
-    let args = Cli::from_args();
-    let phase_result = args.phase.parse::<Phase>();
-    let phase = match phase_result {
-        Ok(phase) => phase,
-        Err(_) => {
-            panic!("Can't parse {:?}", args.phase);
-        }
-    };
-
-    println!("Phase: {}", phase.to_string().green());
-    phase
 }

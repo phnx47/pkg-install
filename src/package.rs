@@ -1,4 +1,5 @@
-use core::fmt;
+use crate::phase::Phase;
+
 use serde::Deserialize;
 use std::collections::HashMap;
 use std::fs;
@@ -12,14 +13,6 @@ pub struct Package {
 #[derive(Deserialize)]
 struct Config {
     paths: HashMap<String, String>,
-}
-
-#[enumeration(case_insensitive)]
-#[derive(Debug, Deserialize, enum_utils::FromStr)]
-pub enum Phase {
-    XOrg,
-    SoftPacman,
-    SoftCargo,
 }
 
 pub fn read_packages(phase: &Phase) -> Vec<Package> {
@@ -44,10 +37,4 @@ pub fn read_packages(phase: &Phase) -> Vec<Package> {
     let data: Vec<Package> =
         serde_json::from_str(&package_str_json).expect("Packages Deserialize Problem");
     data
-}
-
-impl fmt::Display for Phase {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{:?}", self)
-    }
 }
