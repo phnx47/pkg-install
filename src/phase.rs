@@ -17,6 +17,7 @@ pub enum Phase {
     Video,
     Kde,
     SoftPacman,
+    SoftAur,
     SoftCargo,
 }
 

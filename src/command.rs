@@ -8,6 +8,11 @@ pub fn read_command(phase: &Phase) -> Command {
             pacman.arg("-S").arg("--noconfirm").arg("--needed");
             pacman
         }
+        Phase::SoftAur => {
+            let mut cargo = Command::new("yay");
+            cargo.arg("-S");
+            cargo
+        }
         Phase::SoftCargo => {
             let mut cargo = Command::new("cargo");
             cargo.arg("install");
