@@ -11,7 +11,7 @@ struct Cli {
 }
 
 #[enumeration(case_insensitive)]
-#[enumeration(rename_all = "snake_case")]
+#[enumeration(rename_all = "kebab-case")]
 #[derive(Debug, Deserialize, enum_utils::FromStr)]
 pub enum Phase {
     Xorg,
