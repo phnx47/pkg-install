@@ -15,6 +15,7 @@ struct Cli {
 #[derive(Debug, Deserialize, enum_utils::FromStr)]
 pub enum Phase {
     Xorg,
+    Kde,
     SoftPacman,
     SoftCargo,
 }
