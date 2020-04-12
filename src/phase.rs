@@ -14,7 +14,7 @@ struct Cli {
 #[enumeration(rename_all = "kebab-case")]
 #[derive(Debug, Deserialize, enum_utils::FromStr)]
 pub enum Phase {
-    Xorg,
+    Video,
     Kde,
     SoftPacman,
     SoftCargo,
