@@ -4,7 +4,7 @@ use serde::Deserialize;
 use std::collections::HashMap;
 use std::fs;
 
-use inflector::cases::snakecase::to_snake_case;
+use inflector::cases::kebabcase::to_kebab_case;
 
 #[derive(Deserialize)]
 pub struct Package {
@@ -26,7 +26,7 @@ pub fn read_packages(phase: &Phase) -> Vec<Package> {
         serde_json::from_str(&config_str_json).expect("Config Deserialize Problem");
 
     let package_file_path: String;
-    let str_phase = to_snake_case(&phase.to_string());
+    let str_phase = to_kebab_case(&phase.to_string());
 
     match config.paths.get(&str_phase) {
         Some(path) => package_file_path = path.parse().unwrap(),
