@@ -9,9 +9,14 @@ pub fn read_command(phase: &Phase) -> Command {
             pacman
         }
         Phase::SoftAur => {
-            let mut cargo = Command::new("yay");
-            cargo.arg("-S");
-            cargo
+            let mut yay = Command::new("yay");
+            yay.arg("-S")
+                .arg("--noeditmenu")
+                .arg("--nodiffmenu")
+                .arg("--norebuild")
+                .arg("--noconfirm")
+                .arg("--needed");
+            yay
         }
         Phase::SoftCargo => {
             let mut cargo = Command::new("cargo");
