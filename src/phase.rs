@@ -19,6 +19,7 @@ pub enum Phase {
     SoftPacman,
     SoftAur,
     SoftCargo,
+    SoftFlatpak,
 }
 
 impl fmt::Display for Phase {

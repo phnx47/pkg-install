@@ -4,6 +4,7 @@
     "kde" : "/home/sergey/Projects/My/arch-post-install-configs/kde.json",
     "soft-pacman" : "/home/sergey/Projects/My/arch-post-install-configs/soft-pacman.json",
     "soft-aur" : "/home/sergey/Projects/My/arch-post-install-configs/soft-aur.json",
-    "soft-cargo": "/home/sergey/Projects/My/arch-post-install-configs/soft-cargo.json"
+    "soft-cargo": "/home/sergey/Projects/My/arch-post-install-configs/soft-cargo.json",
+    "soft-flatpak": "/home/sergey/Projects/My/arch-post-install-configs/soft-flatpak.json"
   }
 }

@@ -23,6 +23,11 @@ pub fn read_command(phase: &Phase) -> Command {
             cargo.arg("install");
             cargo
         }
+        Phase::SoftFlatpak => {
+            let mut cargo = Command::new("flatpak");
+            cargo.arg("install");
+            cargo
+        }
     };
     install_command
 }
