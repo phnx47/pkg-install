@@ -11,7 +11,6 @@ pub fn read_command(phase: &Phase) -> Command {
         Phase::SoftAur => {
             let mut yay = Command::new("yay");
             yay.arg("-S")
-                .arg("--noeditmenu")
                 .arg("--nodiffmenu")
                 .arg("--norebuild")
                 .arg("--noconfirm")
