@@ -1,6 +1,6 @@
 image: "rust:latest"
 
-build:publish:
+build:release:
   script:
     - rustc --version && cargo --version
-    - ./publish.sh
+    - ./cargo.sh build --release
