@@ -16,10 +16,11 @@ struct Cli {
 pub enum Phase {
     Video,
     Kde,
-    SoftPacman,
-    SoftAur,
-    SoftCargo,
-    SoftFlatpak,
+    Pacman,
+    Aur,
+    Cargo,
+    Flatpak,
+    Npm,
 }
 
 impl fmt::Display for Phase {

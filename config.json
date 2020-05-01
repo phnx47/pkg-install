@@ -2,9 +2,10 @@
   "paths": {
     "video" : "/home/sergey/Projects/My/arch-post-install-configs/video.json",
     "kde" : "/home/sergey/Projects/My/arch-post-install-configs/kde.json",
-    "soft-pacman" : "/home/sergey/Projects/My/arch-post-install-configs/soft-pacman.json",
-    "soft-aur" : "/home/sergey/Projects/My/arch-post-install-configs/soft-aur.json",
-    "soft-cargo": "/home/sergey/Projects/My/arch-post-install-configs/soft-cargo.json",
-    "soft-flatpak": "/home/sergey/Projects/My/arch-post-install-configs/soft-flatpak.json"
+    "pacman" : "/home/sergey/Projects/My/arch-post-install-configs/pacman.json",
+    "aur" : "/home/sergey/Projects/My/arch-post-install-configs/aur.json",
+    "cargo": "/home/sergey/Projects/My/arch-post-install-configs/cargo.json",
+    "flatpak": "/home/sergey/Projects/My/arch-post-install-configs/flatpak.json",
+    "npm": "/home/sergey/Projects/My/arch-post-install-configs/npm.json"
   }
 }
