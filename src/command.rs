@@ -9,13 +9,9 @@ pub fn read_command(phase: &Phase) -> Command {
             pacman
         }
         Phase::Aur => {
-            let mut yay = Command::new("yay");
-            yay.arg("-S")
-                .arg("--nodiffmenu")
-                .arg("--norebuild")
-                .arg("--noconfirm")
-                .arg("--needed");
-            yay
+            let mut rua = Command::new("rua");
+            rua.arg("install");
+            rua
         }
         Phase::Cargo => {
             let mut cargo = Command::new("cargo");
