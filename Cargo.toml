@@ -1,8 +1,8 @@
 [package]
-name = "arch-post-install"
-description = "Arch Linux Post Installation"
+name = "pkg-install"
+description = "Package Installation"
 version = "0.1.0"
-authors = ["Sergey Kuznetsov <sergey.gh@fastmail.net>"]
+authors = ["Serge K <sergey.gh@fastmail.net>"]
 edition = "2018"
 license = "MIT"
 readme = "README.md"
