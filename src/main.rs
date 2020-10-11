@@ -1,8 +1,8 @@
-use arch_post_install::command::read_command;
-use arch_post_install::package::read_packages;
-use arch_post_install::phase::read_phase;
 use colored::*;
 use indicatif::ProgressBar;
+use pkg_install::command::read_command;
+use pkg_install::package::read_packages;
+use pkg_install::phase::read_phase;
 
 fn main() {
     let phase = read_phase();
