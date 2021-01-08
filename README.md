@@ -1,5 +1,3 @@
-# arch-post-install
+# pkg-install
 
-**This project for learn Rust language!!!**
-
-Arch Linux Post Installation
+Package install helper
