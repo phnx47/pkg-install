@@ -1,6 +1,0 @@
-image: "rust:latest"
-
-build:release:
-  script:
-    - rustc --version && cargo --version
-    - ./cargo.sh build --release
